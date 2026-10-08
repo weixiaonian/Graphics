@@ -32,6 +32,11 @@ sign(a) 获得符号函数(正1负-1)
 ```math
 B到A的向量：\vec A - \vec B = \vec A + (- \vec B) = (A_x - B_x,A_y - B_y)
 ```
+
+```gdscript
+var AP = A.direction_to(P)
+AP是A朝向P的向量
+```
 ```gdscript
 向量乘以/除以标量，相当于向量的各分量乘/除标量
 ```
@@ -55,6 +60,11 @@ a=a.normalized()
 点积（两个向量关系）：\vec V \cdot \vec U=V.x \times U.x + V.y \times U.y=
 \|\vec V\|\|\vec U\|\cos \theta
 ```
+
+```gdscript
+godot中点积：c = a.dot(b)
+```
+
 ```math
 标量投影：\hat a \cdot \vec b 得到的是b作垂直辅助线到\vec a的投影，\\沿着a的有符号长度
 ```
@@ -64,6 +74,21 @@ a=a.normalized()
 ```math
 向量投影：\hat a (\hat a \cdot \vec b)
 ```
+叉积
+```math
+叉积的结果是垂直于两个向量的向量\\
+\|\vec a \times \vec b\| = \|\vec a\|\|b\|\sin \theta
+```
+```gdscript
+var c = a.cross(b)
+```
+通过表面两个点的叉积来获取表面的法线
+通过两个对象的面向叉积获取围绕哪个轴旋转
+
+让点与面的法线点乘，可以知道点位于面的哪一侧，点积是点与该平面的距离
+
+
+空间平面，原点顺着平面的法线方向的距离D和法线N组成平面
 # 一些着色器概念
 
 次表面散射
