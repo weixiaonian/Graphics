@@ -8,6 +8,14 @@
 
 偏移量，相对位置（加上距离）
 
+向量可以视为角度和长度（仅表示相对方向和大小）
+```gdscript
+godot中的向量：
+$Node2D.position = Vector2(100,200)
+表示以屏幕左上角为原点，向右100，向下200
+通过点引用访问分量
+position.x
+```
 abs()绝对值函数|n|
 
 sign(a) 获得符号函数(正1负-1)
@@ -19,16 +27,25 @@ sign(a) 获得符号函数(正1负-1)
 ```
 
 向量取反就是x和y加负号，两个向量相减获得差值
+要找到A指向B的向量，使用B-A
 
 ```math
 B到A的向量：\vec A - \vec B = \vec A + (- \vec B) = (A_x - B_x,A_y - B_y)
 ```
+```gdscript
+向量乘以/除以标量，相当于向量的各分量乘/除标量
+```
+
 
 ```math
 向量长度(模长)||\vec V||=\sqrt {v_x^2+v_y^2}
 ```
 ```math
 向量归一化\hat v = (V.x / \|V\|,V.y / \|V\|)
+```
+```gdscript
+godot中向量a归一化
+a=a.normalized()
 ```
 
 ```math
@@ -43,6 +60,9 @@ B到A的向量：\vec A - \vec B = \vec A + (- \vec B) = (A_x - B_x,A_y - B_y)
 ```
 ```math
 \cos \theta = \hat a \cdot \hat b
+```
+```math
+向量投影：\hat a (\hat a \cdot \vec b)
 ```
 # 一些着色器概念
 
